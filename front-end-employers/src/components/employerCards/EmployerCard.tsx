@@ -8,9 +8,17 @@ interface EmployerCardProps {
 const EmployerCard: React.FC<EmployerCardProps> = ({ employer }) => {
     console.log(employer);
     return (
-        <div className={style.Card}>
-            <h2>{employer.firstname + " " + employer.lastname}</h2>
-            <p>{employer.email}</p>
+        <div className={style.Item}>
+            <div className={style.Card}>
+                <h2>{employer.firstname + " " + employer.lastname}</h2>
+                <p>{employer.finishdate - employer.startdate}</p>
+                <p>{employer.email}</p>
+            </div>
+            <div className={style.Options}>
+                <button>Edit</button>
+                <p>|</p>
+                <button>Remove</button>
+            </div>
         </div>
     );
 };
